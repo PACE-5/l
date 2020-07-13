@@ -40,10 +40,12 @@ var firebaseConfig = {
     authDomain: "f-paceword.firebaseapp.com",
     databaseURL: "https://f-paceword.firebaseio.com",
     projectId: "f-paceword",
+    storageBucket: "f-paceword.appspot.com",
+    messagingSenderId: "387660788347",
     appId: "1:387660788347:web:a06d27d12afe873a20e8de"
-};
-
-firebase.initializeApp(firebaseConfig);
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
 let ui = new firebaseui.auth.AuthUI(firebase.auth());
 
