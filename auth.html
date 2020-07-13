@@ -66,18 +66,18 @@ var uiConfig = {
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
   signInSuccessUrl: '/l/index.html',
-  signInOptions: {
+  signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     
-    firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+    firebase.auth.PhoneAuthProvider.PROVIDER_ID],
       recaptchaParameters: {
         //type: 'image', // 'audio'
         size: 'invisible'
 // 'invisible' or 'compact'
         //badge: 'bottomleft' //' bottomright' or 'inline' applies to invisible.
       },
-      defaultCountry: 'IN'
-  },
+      defaultCountry: 'IN',
+  
   // Terms of service url.
   tosUrl: '/l/service.html'
   // Privacy policy url.
