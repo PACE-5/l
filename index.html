@@ -20,6 +20,9 @@ if (user) {
   document.write("</br>  Provider-specific UID: " + profile.uid);
   });
   document.write("</br>"+Object.keys(user));
+  document.write("</br>user UID: " + user.uid);
+  document.write("</br>user tenantId: " + user.tenantId);
+  document.write("</br>user phoneNumber: " + user.phoneNumber);
   }
 } else {
   // No user is signed in.
