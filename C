@@ -1,0 +1,23 @@
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+
+<script type="text/javascript">
+var firebaseConfig = {
+apiKey: "AIzaSyD99TgHQSvxhY4dTBBNXMkR2-icMQ3_Zro",
+authDomain: "f-paceword.firebaseapp.com",
+databaseURL: "https://f-paceword.firebaseio.com",
+projectId: "f-paceword",
+appId: "1:387660788347:web:a06d27d12afe873a20e8de"
+};
+
+firebase.initializeApp(firebaseConfig);
+var user = firebase.auth().currentUser;
+
+if (user) {
+  // User is signed in.
+  document.write(user);
+} else {
+  // No user is signed in.
+  document.writeln("NO-USER_DETECTED");
+}
+</script>
