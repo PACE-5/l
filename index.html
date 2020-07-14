@@ -9,7 +9,7 @@ projectId: "f-paceword",
 appId: "1:387660788347:web:a06d27d12afe873a20e8de"
 };
 firebase.initializeApp(firebaseConfig);
-var user = firebase.auth().currentUser;
+firebase.auth().onAuthStateChanged(function(user) {
 if (user) {
   // User is signed in.
   document.write(user);
@@ -17,4 +17,5 @@ if (user) {
   // No user is signed in.
   document.writeln("NO-USER_DETECTED");
 }
+});
 </script>
