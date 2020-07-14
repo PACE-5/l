@@ -1,5 +1,6 @@
 <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+
 <script type="text/javascript">
 var firebaseConfig = {
 apiKey: "AIzaSyD99TgHQSvxhY4dTBBNXMkR2-icMQ3_Zro",
@@ -8,14 +9,23 @@ databaseURL: "https://f-paceword.firebaseio.com",
 projectId: "f-paceword",
 appId: "1:387660788347:web:a06d27d12afe873a20e8de"
 };
+
 firebase.initializeApp(firebaseConfig);
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function(user){
 if (user) {
   // User is signed in.
-  document.write(user);
+  if (user != null) {
+  user.providerData.forEach(function (profile) {
+  document.write("</br>Sign-in provider: " + profile.providerId);
+  document.write("</br>  Provider-specific UID: " + profile.uid);
+  document.write("</br>  Name: " + profile.displayName);
+  document.write("</br>  Email: " + profile.email);
+  document.write("</br>  Photo URL: " + profile.photoURL);
+  });
+  }
 } else {
   // No user is signed in.
-  document.writeln("NO-USER_DETECTED");
+  document.write("NO-USER_DETECTED");
 }
 });
 </script>
