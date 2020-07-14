@@ -18,10 +18,8 @@ if (user) {
   user.providerData.forEach(function (profile) {
   document.write("</br>Sign-in provider: " + profile.providerId);
   document.write("</br>  Provider-specific UID: " + profile.uid);
-  document.write("</br>  Name: " + profile.displayName);
-  document.write("</br>  Email: " + profile.email);
-  document.write("</br>  Photo URL: " + profile.photoURL);
   });
+  document.write("</br>"+Object.keys(user));
   }
 } else {
   // No user is signed in.
