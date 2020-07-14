@@ -9,7 +9,7 @@
 <script src="/l/firebase/7.16.0/firebase-auth.js"></script>
 <style type="text/css">
 body,html{user-select:none;padding:0;margin:0;width:100vw;}
-body{display:grid;background:rgba(255,255,255,.05);min-height:100vh;}
+body{display:grid;background:rgba(255,255,255,.05);height:100vh;grid-template-rows:10vh 90vh;align-items:center;justify-items:center;}
 html{
 background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3cpath d='M24,0l0,12l24,0l0,24l-24,0l0,12l0-12l-24,0l0-24l24,0Z' fill='none' stroke='%23000000'/%3e%3c/svg%3e");
 background-size:12%;
@@ -17,14 +17,14 @@ background-position:0 12px;
 background-color:#222;
 }
 html:active{background-color:#252525;}
-header{position:relative;width:90%;display:inline-grid;text-align:center;padding:7px 0;
-justify-self:center;margin:9px 0;border-radius:5px;box-shadow:0 0 5px 3px #222;height:5vh;
+header{position:relative;width:90%;display:inline-grid;text-align:center;align-content:center;
+justify-self:center;border-radius:5px;box-shadow:0 0 5px 3px #222;height:70%;
 background:#333;color:#ddd;border:solid 1px #000;font-size:5vmax;font-weight:900;}
 header:before,header:after{content:" ";display:block;position:absolute;background:#000;
 width:2vmax;height:2vmax;border-radius:50%;top:40%;}
 header:before{left:3%;}
 header:after{right:3%;}
-    section{max-width:90vw;}
+section{max-width:90vw;}
 </style>
 <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -69,14 +69,14 @@ var uiConfig = {
     // Leave the lines as is for the providers you want to offer your users.
     {
     provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-        buttonColor: '#2F2F2F',
+    buttonColor: '#222',
     recaptchaParameters: {
     type: 'image', // 'audio'
     size: 'invisible', // or 'compact'
-    badge: 'bottomright'//' bottomright' or 'inline' applies to invisible.
+    badge: 'bottomright' // 'inline' 'bottomright' or 'bottomleft' applies to invisible.
     },
     defaultCountry: 'IN',
-        whitelistedCountries: ['US', 'IN']
+    whitelistedCountries: ['US', 'IN']
     }
   ],
   // Terms of service url.
