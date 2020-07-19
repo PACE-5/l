@@ -21,7 +21,8 @@ if (user) {
   });
   document.write("</br>"+Object.keys(user));
   document.write("</br>user UID: " + user.uid);
-  document.write("</br>user metadata: " + user.metadata);
+  document.write("</br>user metadata: " + Object.keys(user.metadata));
+    document.write("</br>user providerData: " + user.providerData);
   document.write("</br>user phoneNumber: " + user.phoneNumber);
   }
 } else {
