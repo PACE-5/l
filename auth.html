@@ -11,7 +11,7 @@ var firebaseConfig = {
     databaseURL: "https://f-paceword.firebaseio.com",
     projectId: "f-paceword",
     appId: "1:387660788347:web:a06d27d12afe873a20e8de"
-},authStat = true;
+},authStat=true;
 firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(function(user){
 if(user){/*User is signed in.*/if(user != null){if(Date.now() >  Date.parse(user.metadata.lastSignInTime)+86400000){
@@ -19,10 +19,8 @@ if(user){/*User is signed in.*/if(user != null){if(Date.now() >  Date.parse(user
 	document.write("<h2><code>REDIRECTING</code></h2>");window.open("auth.html","_self");
   }).catch(function(error) {
 	document.write("<h1>ERROR</h1></br>error_code:s5ou3t");window.open("auth.html","_self");
-  });}else{window.open("index.html");}
-}}else{
-	authStat=false;
-}});
+  });}else{window.open("index.html","_self");}
+}}else{authStat=false;}});
 </script>
 <style type="text/css">
 body,html{user-select:none;padding:0;margin:0;width:100vw;height:100%;}
@@ -68,7 +66,7 @@ var uiConfig = {
     }
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-  signInFlow: 'popup',
+  signInFlow:'popup',
   signInSuccessUrl: '/l/index.html',
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
