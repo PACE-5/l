@@ -12,7 +12,7 @@ var firebaseConfig = {
     projectId: "f-paceword",
     appId: "1:387660788347:web:a06d27d12afe873a20e8de"
 };
-let authStat = true;
+var authStat = true;
 firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(function(user){
 if(user){// User is signed in.
