@@ -5,10 +5,6 @@
 <script src="/l/firebase/7.16.0/firebase-app.js"></script>
 <script src="/l/firebase/7.16.0/firebase-auth.js"></script>
 <script type="text/javascript">
-    window.onerror = function(msg, url, linenumber) {
-    alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
-    return true;
-}
 var firebaseConfig = {
     apiKey: "AIzaSyD99TgHQSvxhY4dTBBNXMkR2-icMQ3_Zro",
     authDomain: "f-paceword.firebaseapp.com",
@@ -95,10 +91,11 @@ var uiConfig = {
     defaultCountry: 'IN',
     whitelistedCountries: ['US', 'IN']
     }
-  ],// Terms of service url.
+  ],
+  // Terms of service url.
   tosUrl: '/l/service.html'
   // Privacy policy url.
-  //,privacyPolicyUrl: '<your-privacy-policy-url>'
+  ,privacyPolicyUrl: 'privacy-policy-missing.html'
 };
 // The start method will wait until the DOM is loaded.
 if(authStat==false){
