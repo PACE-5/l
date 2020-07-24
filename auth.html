@@ -16,10 +16,10 @@ firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(function(user){
 if(user){/*User is signed in.*/if(user != null){if(Date.now() >  Date.parse(user.metadata.lastSignInTime)+86400000){
 	firebase.auth().signOut().then(function() {
-	document.write("REDIRECTING");window.open("","_self");
+	document.write("REDIRECTING");window.open("auth.html","_self");
   }).catch(function(error) {
 	document.write("ERROR</br>error_code:s5ou3t");
-	window.open("","_self");
+	window.open("auth.html","_self");
   });}else{window.open("/l/index.html");}
 }}else{
 	authStat=false;
