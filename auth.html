@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html><html><head>
 <title>PACE-5L LOGIN</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta charset="UTF-8"/>
-</head><body>
+<meta charset="UTF-8"/></head><body>
 <script src="/l/firebase/7.16.0/firebase-app.js"></script>
 <script src="/l/firebase/7.16.0/firebase-auth.js"></script>
 <script type="text/javascript">
@@ -20,13 +17,13 @@ firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(function(user){
 if(user){// User is signed in.
   if(user != null){
-  if(Date.now() >  Date.parse(user.metadata.lastSignInTime)+86400000){
+  if(Date.now() >  Date.parse(user.metadata.lastSignInTime)+(864e+5)){
   firebase.auth().signOut().then(function() {
   document.write("REDIRECTING");
-  window.open("/l/auth.html");
+  window.open("","_self");
   }).catch(function(error) {
   document.write("ERROR</br>error_code:s5ou3t");
-  window.open("/l/auth.html");
+  window.open("","_self");
   });
   }else{window.open("/l/index.html");}}
 }else {authStat = false;}
@@ -61,10 +58,8 @@ section{max-width:90vw;height:90%;margin:5% 0;}
 LOADING...
 </header>
 <section id="cont">
-</section>
-
+</section></body>
 <script aw type="text/javascript">
-
 let ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 var uiConfig = {
@@ -76,8 +71,7 @@ var uiConfig = {
       return true;
     },
     uiShown: function() {
-      // The widget is rendered.
-      // Hide the loader.
+      // The widget is rendered, Hide the loader.
       document.getElementById('head').innerText = 'PACE-5L';
     }
   },
@@ -97,20 +91,14 @@ var uiConfig = {
     defaultCountry: 'IN',
     whitelistedCountries: ['US', 'IN']
     }
-  ],
-  // Terms of service url.
+  ],// Terms of service url.
   tosUrl: '/l/service.html'
   // Privacy policy url.
   //,privacyPolicyUrl: '<your-privacy-policy-url>'
 };
-
 // The start method will wait until the DOM is loaded.
 if(authStat==false){
 ui.start('#cont', uiConfig);
 }
 </script>
-</body>
-<!--
-<svg  xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path d="M24,0l0,12l24,0l0,24l-24,0l0,12l0-12l-24,0l0-24l24,0Z" fill="none" stroke="#000000"/></svg>
--->
 </html>
