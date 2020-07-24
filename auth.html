@@ -7,6 +7,25 @@
 </head><body>
 <script src="/l/firebase/7.16.0/firebase-app.js"></script>
 <script src="/l/firebase/7.16.0/firebase-auth.js"></script>
+<script type="text/javascript">
+var firebaseConfig = {
+    apiKey: "AIzaSyD99TgHQSvxhY4dTBBNXMkR2-icMQ3_Zro",
+    authDomain: "f-paceword.firebaseapp.com",
+    databaseURL: "https://f-paceword.firebaseio.com",
+    projectId: "f-paceword",
+    appId: "1:387660788347:web:a06d27d12afe873a20e8de"
+};
+let authStat = true;
+firebase.initializeApp(firebaseConfig);
+firebase.auth().onAuthStateChanged(function(user){
+if(user){// User is signed in.
+  if(user != null){
+  if(Date.now() >  Date.parse(user.metadata.lastSignInTime)+86400000){
+  document.write("SESSION EXPIRED");
+  }}
+}else {authStat = false;}
+});
+</script>
 <style type="text/css">
 body,html{user-select:none;padding:0;margin:0;width:100vw;height:100%;}
 body{display:grid;background:rgba(255,255,255,.05);grid-template-rows:20% 80%;justify-items:center;}
@@ -39,15 +58,6 @@ LOADING...
 </section>
 
 <script aw type="text/javascript">
-var firebaseConfig = {
-    apiKey: "AIzaSyD99TgHQSvxhY4dTBBNXMkR2-icMQ3_Zro",
-    authDomain: "f-paceword.firebaseapp.com",
-    databaseURL: "https://f-paceword.firebaseio.com",
-    projectId: "f-paceword",
-    appId: "1:387660788347:web:a06d27d12afe873a20e8de"
-};
-
-firebase.initializeApp(firebaseConfig);
 
 let ui = new firebaseui.auth.AuthUI(firebase.auth());
 
@@ -89,8 +99,9 @@ var uiConfig = {
 };
 
 // The start method will wait until the DOM is loaded.
+if(authStat==false){
 ui.start('#cont', uiConfig);
-
+}
 </script>
 </body>
 <!--
