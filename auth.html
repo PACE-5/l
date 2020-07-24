@@ -21,8 +21,14 @@ firebase.auth().onAuthStateChanged(function(user){
 if(user){// User is signed in.
   if(user != null){
   if(Date.now() >  Date.parse(user.metadata.lastSignInTime)+86400000){
-  document.write("SESSION EXPIRED");
-  }}
+  firebase.auth().signOut().then(function() {
+  document.write("REDIRECTING");
+  window.open("/l/auth.html");
+  }).catch(function(error) {
+  document.write("ERROR</br>error_code:s5ou3t");
+  window.open("/l/auth.html");
+  });
+  }else{window.open("/l/index.html");}}
 }else {authStat = false;}
 });
 </script>
